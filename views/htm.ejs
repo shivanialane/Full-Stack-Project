@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Smart</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="cs.css">
+    <style>
+        :root{
+    --pink:#e84393;
+}
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color:#333;
+    padding:1rem;
+    margin:2rem 0;
+    background:rgba(255, 51, 153,.05);
+}
+
+.heading span{
+    color:var(--pink);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background:#333;
+    color:#fff;
+    padding:.9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    background:var(--pink);
+}
+
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background:#fff;
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    font-size: 3rem;
+    color:#333;
+    font-weight: bolder;
+}
+
+header .logo span{
+    color:var(--pink);
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding:0 1.5rem;
+    color:#666;
+}
+
+header .navbar a:hover{
+    color:var(--pink);
+}
+
+header .icons a{
+    font-size: 2.5rem;
+    color:#333;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover{
+    color:var(--pink);
+}
+
+header #toggler{
+    display: none;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    color:#333;
+    border-radius: .5rem;
+    padding:.5rem 1.5rem;
+    cursor: pointer;
+    border:.1rem solid rgba(0,0,0,.3);
+    display: none;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background:url(https://static.vecteezy.com/system/resources/previews/004/757/709/original/isometric-landing-page-template-concept-of-online-education-for-banner-and-website-in-memphis-style-background-online-training-courses-university-studies-e-learning-research-illustration-free-vector.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 50rem;
+}
+
+.home .content h3{
+    font-size: 6rem;
+    color:#333;
+}
+
+.home .content span{
+    font-size: 3.5rem;
+    color:var(--pink);
+    padding:1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p{
+    font-size: 1.5rem;
+    color:#999;
+    padding:1rem 0;
+    line-height: 1.5;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    padding-bottom: 3rem;
+}
+
+.about .row .video-container{
+    flex:1 1 40rem;
+    position: relative;
+}
+
+.about .row .video-container video{
+    width:100%;
+    border:1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .row .video-container h3{
+    position: absolute;
+    top:50%; transform: translateY(-50%);
+    font-size: 3rem;
+    background:#fff;
+    width:100%;
+    padding:1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+}
+
+.about .row .content{
+    flex:1 1 40rem;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    color:#333;
+}
+.about .row .content h4{
+    font-size: 1.8rem;
+    padding-top: 1rem;
+    color:#FF99CC;
+}
+
+.about .row .content p{
+    font-size: 1.5rem;
+    color:#999;
+    padding:.5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+.icons-container{
+    background:#eee;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.icons-container .icons{
+    background:#fff;
+    border:.1rem solid rgba(0,0,0,.1);
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    flex:1 1 25rem;
+}
+
+.icons-container .icons img{
+    height:5rem;
+    margin-right: 2rem;
+}
+
+.icons-container .icons h3{
+    color:#333;
+    padding-bottom: .5rem;
+    font-size: 1.5rem;
+}
+
+.icons-container .icons span{
+    color:#555;
+    font-size: 1.3rem;
+}
+
+.course .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.course .box-container .box{
+    flex:1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.1);
+    position: relative;    
+}
+
+.course .box-container .box .discount{
+    position: absolute;
+    top:1rem; left:1rem;
+    padding:.7rem 1rem;
+    font-size: 2rem;
+    color:var(--pink);
+    background:rgba(255, 51, 153,.05);
+    z-index: 1;
+    border-radius: .5rem;
+}
+
+.course .box-container .box .image{
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow:hidden;
+}
+
+.course .box-container .box .image img{
+    height:25rem;
+}
+
+.course .box-container .box:hover .image img{
+    transform: scale(1.1);
+}
+
+.course .box-container .box .image .icons{
+    position: absolute;
+    bottom:-7rem; left:0; right:0;
+    display: flex;
+}
+
+.course .box-container .box:hover .image .icons{
+    bottom:0;
+}
+
+.course .box-container .box .image .icons a{
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    width:50%;
+    background:var(--pink);
+    color:#fff;
+}
+
+.course .box-container .box .image .icons .cart-btn{
+    border-left: .1rem solid #fff7;
+    border-right: .1rem solid #fff7;
+    width:100%;
+}
+
+.course .box-container .box .image .icons a:hover{
+    background:#333;
+}
+
+.course .box-container .box .content{
+    padding:2rem;
+    text-align: center;
+}
+
+.course .box-container .box .content h3{
+    font-size: 2.5rem;
+    color:#333;
+}
+
+.course .box-container .box .content .price{
+    font-size: 2.5rem;
+    color:var(--pink);
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+
+.course .box-container .box .content .price span{
+    font-size: 1.5rem;
+    color:#999;
+    font-weight: lighter;
+    text-decoration: line-through;
+}
+
+
+.contact .row{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap:1.5rem;
+    align-items: center;
+}
+
+.contact .row form{
+    flex:1 1 40rem;
+    padding:2rem 2.5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border:.1rem solid rgba(0,0,0,.1);
+    background: #fff;
+    border-radius: .5rem;
+}
+
+.contact .row .image{
+    flex:1 1 40rem;
+}
+
+.contact .row .image img{
+    width: 100%;
+}
+
+.contact .row form .box{
+    padding:1rem;
+    font-size: 1.7rem;
+    color:#333;
+    text-transform: none;
+    border:.1rem solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+    margin:.7rem 0;
+    width: 100%;
+}
+
+.contact .row form .box:focus{
+    border-color: var(--pink);
+}
+
+.contact .row form textarea{
+    height: 15rem;
+    resize: none;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+.footer{
+    background-color: black;
+}
+
+.footer .box-container .box{
+    flex:1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    color:var(--pink);
+    font-size: 2.5rem;
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    color:#FFFFFF;
+    font-size: 1.5rem;
+    padding:1rem 0;
+}
+
+.footer .box-container .box a:hover{
+    color:var(--pink);
+    text-decoration: underline;
+}
+
+.footer .box-container .box  img{
+    margin-top: 1rem;
+}
+
+.footer .credit{
+    text-align: center;
+    padding:1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:#FFFFFF;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    padding-bottom: 9rem;
+}
+
+.footer .credit span{
+    color:var(--pink);
+}
+
+/* media queries  */
+@media (max-width:991px){
+    
+    html{
+        font-size: 55%;
+    }
+
+    header{
+        padding:2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+    .home{
+        background-position: left;
+    }
+
+}
+
+@media (max-width:768px){
+
+    header .fa-bars{
+        display: block;
+    }
+
+    header .navbar{
+        position:absolute;
+        top:100%; left:0; right:0;
+        background:#eee;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked ~ .navbar{
+        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a{
+        margin:1.5rem;
+        padding:1.5rem;
+        background:#fff;
+        border:.1rem solid rgba(0,0,0,.1);
+        display: block;
+    }
+
+    .home .content h3{
+        font-size: 5rem;
+    }
+
+    .home .content span{
+        font-size: 2.5rem;
+    }
+
+    .icons-container .icons h3{
+        font-size: 2rem;
+    }
+    
+    .icons-container .icons span{
+        font-size: 1.7rem;
+    }
+    
+}
+
+@media (max-width:450px){
+    
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 3rem;
+    }
+
+}
+
+    </style>
+</head>
+<body>
+    <header>
+
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">Learn Smart<span>.</span></a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#course">Courses</a>
+        <a href="#contact">contact</a>
+        <a href="/signup">Sign Up</a>
+    </nav>
+    <div class="icons">
+        <!--<a href="/signup"><button>Sign Up</button></a>-->
+        <a href="/login" class="fas fa-user"></a>
+    </div>
+</header>
+<section class="home" id="home">
+
+    <div class="content">
+        
+    </div>
+    
+</section>
+<section class="about" id="about">
+
+    <h1 class="heading"> <span> about </span> us </h1>
+
+    <div class="row">
+
+        <div class="video-container">
+            <img src="https://graphiccloud.net/wp-content/uploads/2022/10/Free-Book-Reading-Illustration-1-1200x693.jpg" width="500" height="371">
+            
+        </div>
+
+        <div class="content">
+            <h3>why choose us?</h3>
+            <h4>A new free technology tutorial everyday!</h4>
+            <p>Develop new technical skills and knowledge with Learn Smart daily. It is the online library and learning platform for professional developers. Learn Machine Learning, Internet of Things, Artificial Intelligence and more courses. </p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+         </div>
+
+</section>
+
+<section class="course" id="course">
+
+    <h1 class="heading"><span>Courses</span> </h1>
+    <div class="box-container">
+        <form method="GET" action="/ml">
+        <div class="box">
+            <div class="image">
+                <img src="https://www.pngitem.com/pimgs/m/346-3460443_machine-learning-course-near-me-machine-learning-logo.png" alt="">
+                <div class="icons">
+                    <a href="/ml" class="cart-btn">Go to Course</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Machine Learning</h3>
+            </div>
+        </div>
+        </form>
+
+        <form method="GET" action="/iot">
+        <div class="box">
+            <div class="image">
+                <img src="https://www.alifitsolutions.com/public/user/images/IOT%20(1).png" alt="">
+                <div class="icons">
+                    <a href="/iot" class="cart-btn">Go to Course</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>IoT</h3>
+            </div>
+        </div>
+        </form>
+        <form method="GET" action="/ai">
+        <div class="box">
+            <div class="image">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/internet-network-technology/artificial-intelligence-ai-icon.png" alt="">
+                <div class="icons">
+                    <a href="/ai" class="cart-btn">Go to Course</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Artificial Intelligence</h3>
+            </div>
+        </div>
+        </form>
+        <form method="GET" action="/cs">
+        <div class="box">
+            <div class="image">
+                <img src="https://seeklogo.com/images/C/cyber-security-logo-D84A24E3F8-seeklogo.com.png" width="380" height="380" alt="">
+                <div class="icons">
+                    <a href="/cs" class="cart-btn">Go to Course</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Cyber Security</h3>
+            </div>
+        </div>
+    </form>
+    <form method="GET" action="/ds">
+        <div class="box">
+            <div class="image">
+                <img src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1626678209/hevo-learn/data-science-logo-icon/data-science-logo-icon.png?_i=AA" width="480" height="500" alt="">
+                <div class="icons">
+                    <a href="/ds" class="cart-btn">Go to Course</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Data Science</h3>
+            </div>
+        </div>
+    </form>
+    <form method="GET" action="/robo">
+        <div class="box">
+            <div class="image">
+                <img src="https://www.nicepng.com/png/detail/923-9231185_home-robotics-on-the-runway-event-transparent-robot.png" alt="">
+                <div class="icons">
+                    <a href="/robo" class="cart-btn">Go to Course</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Robotics</h3>
+            </div>
+        </div>
+    </form>
+    <form method="GET" action="/cc">
+        <div class="box">
+            <div class="image">
+                <img src="https://www.pngitem.com/pimgs/m/789-7890547_cloud-computing-png-free-pic-transparent-png.png" alt="">
+                <div class="icons">
+                    <a href="/cc" class="cart-btn">Go to Course</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Cloud Computing</h3>
+            </div>
+        </div>
+    </form>
+    <form method="GET" action="/fs">
+        <div class="box">
+            <div class="image">
+                <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190626123927/untitlsssssed.png" alt="">
+                <div class="icons">
+                    <a href="/fs" class="cart-btn">Go to Course</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Full Stack Development</h3>
+            </div>
+        </div>
+    </form>
+      </section>
+      <section class="contact" id="contact">
+
+    <h1 class="heading"> <span> contact </span> us </h1>
+
+    <div class="row">
+
+        <form method="GET" action="/contactSubmit">
+            <input type="text" placeholder="name" name="name" class="box">
+            <input type="email" placeholder="email" name="email" class="box">
+            <input type="number" placeholder="number" name="number" class="box">
+            <textarea name="message" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
+            <input type="submit" class="btn">
+        </form>
+
+        <div class="image">
+            <img src="https://elsa.santa-angela.sch.id/images/learn.png">
+        </div>
+
+    </div>
+
+</section>
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">home</a>
+            <a href="#about">about</a>
+            <a href="#course">Courses</a>
+            <a href="#contact">contact</a>
+        </div>  
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+91 709-399-3474</a>
+            <a href="#">renu_shivani@gmail.com</a>
+            <a href="#">Hyderabad, India - 500090</a>
+        </div>
+    </div>
+    <div class="credit"> created by <span> K.Renu Sreeja | A.Shivani</div>
+    </section>
+</body>
+</html>

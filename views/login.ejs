@@ -1,0 +1,104 @@
+<DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login Form</title>
+	<link rel="stylesheet" href="plogin.css">
+
+	<style>
+	body{
+	background:#FFC0CB;
+	margin:0;
+	padding:0;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+
+}
+.container{
+	width:360px;
+	height: 600px;
+	background: #87CEFA;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:black;
+    text-align:center;
+}
+.container h1{
+	font-size:40px;
+	margin-top: 125px;
+	margin-bottom: 60px;
+}
+.tbox{
+	width:260px;
+	height:40px;
+	background: #FFEFD5;
+	border-radius: 10px;
+	margin: 10px auto;
+
+}
+.tbox input{
+	background: none;
+	border:none;
+	outline: none;
+	text-align: center;
+	width:90%;
+	line-height: 37%;
+	font-family:"Montserrat",sans-serif;
+	font-size: 14px;
+	color:#333;
+}
+.btn{
+	width:260px;
+	height: 40px;
+	background: #B0E0E6;
+	border-radius: 10px;
+	margin:14px auto;
+	display: block;
+	font-family: "Montserrat",sans-serif;
+	font-size:16px;
+	border:none;
+	color:black;
+	cursor:pointer;
+}
+.b1{
+	display: block;
+	width:260px;
+	padding:10px 0;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	margin:auto;
+	transform: 0.4s all; 
+}
+.b2{
+	position: absolute;
+	bottom:80px;
+	left: 50%;
+	transform: translate(-50%);
+	width:260px;
+	padding:10px 0;
+	text-decoration: none;
+	text-align: center;
+	transition:0.4s all;
+}
+	</style>
+</head>
+<body>
+	<form method="GET" action="/loginSubmit">
+	<div class="container">
+		<h1>LOG IN</h1>
+		<form action="glogin.html" method="post">
+			<div class="tbox">
+				<input type="text" placeholder="@username" name="username"value="">
+			</div>
+			<div class="tbox">
+				<input type="password" placeholder="password" name="password" value="">
+			</div>
+			
+				<input class="btn" type="submit" value="LOG IN">
+			</form>
+			</div>
+		</form>
+</body>
+</html>
